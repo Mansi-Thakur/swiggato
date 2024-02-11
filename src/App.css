@@ -1,5 +1,12 @@
 .App {
-  text-align: center;
+  position: relative;
+    padding-top: 80px;
+    min-height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    /* min-width: 1240px; */
 }
 
 .App-logo {
@@ -35,4 +42,169 @@
   to {
     transform: rotate(360deg);
   }
+}
+.headerLogo {
+  width: 50px;
+  height: 50px;
+}
+.header{
+  box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: #fff;
+    z-index: 1000;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform .3s ease;
+    contain: size layout style;
+    padding: 0 20px;
+}
+.globalNav{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: none;
+  outline: none;
+}
+.headerContainer{
+max-width: 1200px;
+/* min-width: 1200px; */
+position: relative;
+margin: 0 auto;
+height: 80px;
+background: #fff;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-align: center;
+align-items: center;
+}
+.logoImageContainer{
+  display: block;
+    height: 49px;
+    transition: transform .3s cubic-bezier(.215,.61,.355,1);
+    margin-right: 16px;
+}
+.headerList {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+  align-items: center;
+  /* justify-content: flex-end; Align items to the right */
+  padding: 0; /* Remove default padding */
+  list-style: none; /* Remove default list styles */
+}
+
+.headerListItem {
+  margin-left: 20px; /* Add space between list items */
+  color: #3d4152;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .headerListItem {
+    margin-left: 10px; /* Reduce margin for smaller screens */
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+}
+.homeFullContainer{
+  flex-grow: 1;
+}
+.homeSubContainer{
+  height: 100%;
+}
+.homeContainer{
+  font-family: "Basis Grotesque Pro", Arial, sans-serif !important;
+}
+.homeMain{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+}
+.homeDiv{
+  margin-left: calc(10% + 36px);
+  margin-right: calc(10% + 36px);
+}
+.homeNestedDiv{
+  position: relative;
+}
+.homeInnerDiv{
+  display: flex;
+  position: absolute;
+  margin-top: 12px;
+  right: 16px;
+}
+.homeContent{
+  background: rgb(255, 255, 255);
+    padding: 16px;
+    overflow: hidden;
+}
+.homeContentHeader{
+    background: rgb(255, 255, 255);
+    margin-bottom: 16px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    overflow: hidden;
+}
+.homeHeader{
+  display: contents;
+}
+.buttonLeft{
+  margin-right: 1rem;
+}
+.foodChoicesContainer{
+    margin: 0px 16px 32px 16px;
+}
+.foodChoicesContainerRow{
+  padding-left: 16px;
+    width: 100%;
+    padding-right: 24px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.foodChoice{
+  width: 144px;
+  height: 184px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+.foodChoiceBox{
+  height: 180px;
+  width: 144px;
+}
+.foodChoiceImage {
+  object-fit: cover;
+  width: 144px;
+  height: 144px; /* Adjust the height to match the width for a perfect circle */
+  border-radius: 50%; /* Make the image round */
+}
+.foodChoiceText {
+  text-align: center;
+  margin: 8px;
+  font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+}
+
+@media (max-width: 961px){
+.homeDiv {
+    margin-left: 0;
+    margin-right: 0;
+}
 }
