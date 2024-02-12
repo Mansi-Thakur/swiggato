@@ -201,6 +201,88 @@ align-items: center;
     letter-spacing: -0.3px;
     color: rgba(2, 6, 12, 0.75);
 }
+.placeListContainer {
+  margin: 0px 16px;
+}
+
+.placeListItem {
+  text-decoration: none;
+  color: inherit;
+  outline: 0px;
+  cursor: pointer;
+  display: inline-block; /* Display items in a horizontal line */
+  width: 280px;
+  margin: 20px 10px 0px; /* Adjust margin */
+  vertical-align: top; /* Align items to the top */
+}
+/* Define the transition for the hover effect */
+.placeListItem:hover .restaurantImage {
+  transform: scale(1.1); /* Increase scale on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+
+.restaurantImageContainer {
+  position: relative;
+}
+
+.restaurantImage {
+  width: 100%;
+  height: 200px; /* Maintain aspect ratio */
+  border-radius: 16px;
+  overflow: hidden; /* Hide overflow to keep the border-radius */
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 2px 8px);
+}
+.restaurantText{
+  color: rgba(2, 6, 12, 0.6);
+  margin: 1rem 0 1rem 0;
+}
+.detailContainer {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: #f9f9f9;
+}
+
+.placeName {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.placeImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.placeRating,
+.placeAddress {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+
+.pagination {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center items horizontally */
+  margin-top: 20px; /* Add margin */
+}
+
+.pagination span {
+  cursor: pointer;
+  margin: 0px 4px; /* Adjust margin */
+}
+
+.pagination__disable {
+  color: lightgray; /* Change color for disabled pagination */
+}
+
+.pagination__selected {
+  font-weight: bold; /* Highlight selected page */
+}
 
 @media (max-width: 961px){
 .homeDiv {

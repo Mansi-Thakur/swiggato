@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Bakery from "./../Assets/Bakery.jpg";
 import Bar from "./../Assets/Bar.jpg";
 import Cafe from "./../Assets/Cafe.jpg";
@@ -10,6 +11,17 @@ import Sushi from "./../Assets/Sushi.jpg";
 import ThaiFood from "./../Assets/ThaiFood.jpg";
 
 export const Home = () => {
+  const foodCategories = [
+    { name: "Bakery", image: Bakery },
+    { name: "Bar", image: Bar },
+    { name: "Cafe", image: Cafe },
+    { name: "Chinese Food", image: ChineseFood },
+    { name: "Ice Cream", image: IceCream },
+    { name: "Indian Food", image: IndianFood },
+    { name: "Pizza", image: Pizza },
+    { name: "Sushi", image: Sushi },
+    { name: "Thai Food", image: ThaiFood },
+  ];
   return (
     <div className="homeFullContainer">
       <div className="homeSubContainer">
@@ -30,132 +42,20 @@ export const Home = () => {
                     </div>
                     <div className="foodChoicesContainer">
                       <div className="foodChoicesContainerRow">
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
+                      {foodCategories.map((category, index) => (
+                          <div className="foodChoicesContainer" key={index}>
+                            <Link to={`/listing/${category.name.toLowerCase()}`} className="foodChoice">
                               <div className="foodChoiceBox">
                                 <img
                                   className="foodChoiceImage"
-                                  alt="Bakery"
-                                  src={Bakery}
+                                  alt={category.name}
+                                  src={category.image}
                                 />
-                                <h4 className="foodChoiceText">Bakery</h4>
+                                <h4 className="foodChoiceText">{category.name}</h4>
                               </div>
-                            </a>
+                            </Link>
                           </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="Bar"
-                                  src={Bar}
-                                />
-                                <h4 className="foodChoiceText">Bar</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="Cafe"
-                                  src={Cafe}
-                                />
-                                <h4 className="foodChoiceText">Cafe</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="ChineseFood"
-                                  src={ChineseFood}
-                                />
-                                <h4 className="foodChoiceText">Chinese Food</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="IceCream"
-                                  src={IceCream}
-                                />
-                                <h4 className="foodChoiceText">Ice Cream</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="IndianFood"
-                                  src={IndianFood}
-                                />
-                                <h4 className="foodChoiceText">Indian Food</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="Pizza"
-                                  src={Pizza}
-                                />
-                                <h4 className="foodChoiceText">Pizza</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="Sushi"
-                                  src={Sushi}
-                                />
-                                <h4 className="foodChoiceText">Sushi</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="foodChoicesContainer">
-                          <div>
-                            <a className="foodChoice" href="./">
-                              <div className="foodChoiceBox">
-                                <img
-                                  className="foodChoiceImage"
-                                  alt="ThaiFood"
-                                  src={ThaiFood}
-                                />
-                                <h4 className="foodChoiceText">Thai Food</h4>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>

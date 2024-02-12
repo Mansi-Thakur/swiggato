@@ -1,5 +1,6 @@
 import React from "react";
 import foodLogo from "./../Assets/foodLogo.png";
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
@@ -12,7 +13,7 @@ export const Header = () => {
         <li className="headerListItem">Cart</li>
         <li className="headerListItem">Contact Us</li>
         <li className="headerListItem">About Us</li>
-          <li className="headerListItem">Home</li>
+          <li className="headerListItem"><Link to="/">Home</Link></li>
         </ul>
       </div>
     </div>
